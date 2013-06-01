@@ -8,6 +8,8 @@
   <dd><%= @idea.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @idea.description %></dd>
+  <dt><strong>Status:</strong></dt>
+  <dd><%= @idea.status.title %></dd>
 </dl>
 
 <div class="form-actions">
