@@ -83,4 +83,25 @@ class IdeasController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def upvote
+    @idea = Idea.find(params[:id])
+    @idea.liked_by current_user
+
+    respond_to do |format|
+      format.html { redirect_to ideas_url }
+      format.json { head :no_content }
+    end
+  end
+  
+  def downvote
+    @idea = Idea.find(params[:id])
+    @idea.downvote_from current_user
+
+    respond_to do |format|
+      format.html { redirect_to ideas_url }
+      format.json { head :no_content }
+    end
+  end
+  
 end

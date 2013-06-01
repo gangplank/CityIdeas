@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create!({:email => "admin@cityideas.com", :password => "password", :password_confirmation => "password" })
+
 statuses = Status.create([{ name: 'under review' }, 
                         { name: 'planned' }, 
                         { name: 'started' }, 
