@@ -38,7 +38,7 @@
                       :class => 'btn btn-mini btn-danger' %>
 		  <%- if current_user %>
 				  <%= link_to "Yes", upvote_idea_path(idea) %>
-				  <%= link_to "No", upvote_idea_path(idea) %>
+				  <%= link_to "No", downvote_idea_path(idea) %>
 		  <% end %>
 
         </td>
