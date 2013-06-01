@@ -4,8 +4,12 @@ CityIdeas::Application.routes.draw do
 
   resources :statuses
 
-
-  resources :ideas
+  resources :ideas do
+    member do
+      get 'upvote'
+      get 'downvote'
+    end
+  end
 
 
   match '/' => 'ideas#index'

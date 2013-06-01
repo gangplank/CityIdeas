@@ -6,6 +6,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Total Votes</th>
+      <th>Score</th>
+      <th>Yes</th>
+      <th>No</th>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -16,6 +20,10 @@
   <tbody>
     <% @ideas.each do |idea| %>
       <tr>
+        <td><%= idea.votes.size %></td>
+        <td><%= idea.upvotes.size -  idea.downvotes.size %></td>
+        <td><%= idea.upvotes.size %></td>
+        <td><%= idea.downvotes.size %></td>
         <td><%= link_to idea.id, idea_path(idea) %></td>
         <td><%= idea.title %></td>
         <td><%= idea.description %></td>
@@ -28,6 +36,11 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+		  <%- if current_user %>
+				  <%= link_to "Yes", upvote_idea_path(idea) %>
+				  <%= link_to "No", upvote_idea_path(idea) %>
+		  <% end %>
+
         </td>
       </tr>
     <% end %>
