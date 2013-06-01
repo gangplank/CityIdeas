@@ -12,7 +12,7 @@ CityIdeas::Application.routes.draw do
   end
 
 
-  match '/' => 'ideas#index'
+  match '/' => redirect('/ideas')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
