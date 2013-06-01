@@ -1,3 +1,3 @@
 class Status < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :name
 end
