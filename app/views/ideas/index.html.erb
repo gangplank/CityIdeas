@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= Status %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= link_to idea.id, idea_path(idea) %></td>
         <td><%= idea.title %></td>
         <td><%= idea.description %></td>
-        <td><%=l idea.created_at %></td>
+        <td><%= idea.status.title %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_idea_path(idea), :class => 'btn btn-mini' %>
