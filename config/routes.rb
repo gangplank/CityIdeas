@@ -1,4 +1,10 @@
 CityIdeas::Application.routes.draw do
+
+  resources :ideas
+
+
+  match '/' => 'ideas#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
