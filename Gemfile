@@ -39,3 +39,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'twitter-bootstrap-rails'
+
+# User Management
+gem 'devise'
