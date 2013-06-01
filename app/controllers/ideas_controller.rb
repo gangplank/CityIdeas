@@ -1,4 +1,7 @@
 class IdeasController < ApplicationController
+
+  before_filter :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
+
   # GET /ideas
   # GET /ideas.json
   def index
