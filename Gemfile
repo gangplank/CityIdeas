@@ -42,3 +42,6 @@ gem 'twitter-bootstrap-rails'
 
 # User Management
 gem 'devise'
+
+# Voting
+gem 'acts_as_votable', '~> 0.5.0'
