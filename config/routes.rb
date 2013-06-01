@@ -1,5 +1,8 @@
 CityIdeas::Application.routes.draw do
 
+  resources :statuses
+
+
   resources :ideas
 
 
