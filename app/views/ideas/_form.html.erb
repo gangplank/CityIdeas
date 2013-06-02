@@ -17,6 +17,12 @@
       <%= f.select :status_id, options_from_collection_for_select(Status.all, :id, :name), :class => 'select' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.label :category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), :class => 'select' %>
+    </div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
