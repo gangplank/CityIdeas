@@ -19,7 +19,7 @@ LAYOUT - http://smacss.com/book/type-layout
 
 #topNav {
   .navbar-inner > .container-fluid {
-    width:960px;
+    //width:960px;
     margin:0 auto;
   }
 }
@@ -32,12 +32,12 @@ LAYOUT - http://smacss.com/book/type-layout
 }
 #footer {
   &> .container-fluid {
-    width:960px;
+    //width:960px;
     margin:0 auto;
   }
 }
 
 #page {
   margin:0 auto;
-  width:960px;
+  //width:960px;
 }
