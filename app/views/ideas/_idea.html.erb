@@ -20,11 +20,9 @@
     <%- if current_user %>
 
       <%= link_to upvote_idea_path(idea) do %>
-        <i class="icon-thumbs-up"></i>
-      <% end %>
+        <i class="icon-thumbs-up" title="Vote Up"></i><% end %>
       <%= link_to downvote_idea_path(idea) do %>
-       <i class="icon-thumbs-down"></i>
-      <% end %>
+       <i class="icon-thumbs-down" title="Vote Down"></i><% end %>
     <% end %>
   </div>
 </li>
