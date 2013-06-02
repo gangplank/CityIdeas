@@ -12,3 +12,26 @@ MODULE - http://smacss.com/book/type-module
 .text p {
   font: 400 16px/24px "gentium book basic";
 }
+
+/* IDEAS */
+.idealist {
+  &> ol {
+
+    margin:0;
+
+    &> li {
+      list-style:none;
+
+      a {
+        font-weight:bold;
+      }
+    }
+  }
+}
+
+.voteCount, .commentCount {
+  color:#222;
+  &.inactive {
+    color:#999
+  }
+}

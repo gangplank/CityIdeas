@@ -1,0 +1,30 @@
+<li class="row-fluid">
+  <div class="span9">
+    <%= link_to idea.title, idea_path(idea.id) %>
+    <span class="voteCount<%= " inactive" if idea.upvotes.size -  idea.downvotes.size == 0 %>">
+      <%= pluralize(idea.upvotes.size -  idea.downvotes.size, "vote") %>
+    </span>
+    <span class="commentCount<%= " inactive" if idea.comments.size %>">
+      <%= pluralize( idea.comments.size, "comment" ) %>
+    </span>
+    <p><%= idea.description %></p>
+  </div>
+  <div class="span3">
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_idea_path(idea), :class => 'btn btn-mini' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                idea_path(idea),
+                :method => :delete,
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-mini btn-danger' %>
+    <%- if current_user %>
+
+      <%= link_to upvote_idea_path(idea) do %>
+        <i class="icon-thumbs-up"></i>
+      <% end %>
+      <%= link_to downvote_idea_path(idea) do %>
+       <i class="icon-thumbs-up"></i>
+      <% end %>
+    <% end %>
+  </div>
+</li>
