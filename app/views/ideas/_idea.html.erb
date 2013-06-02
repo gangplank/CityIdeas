@@ -5,7 +5,7 @@
       <%= pluralize(idea.upvotes.size -  idea.downvotes.size, "vote") %>
     </span>
     <span class="commentCount<%= " inactive" if idea.comments.size %>">
-      <%= pluralize( idea.comments.size, "comment" ) %>
+      <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea)  %>
     </span>
     <p><%= idea.description %></p>
   </div>
