@@ -1,4 +1,3 @@
-
 <%- model_class = Idea -%>
 <div class="page-header">
   <h1>
@@ -10,7 +9,6 @@
   </h1>
 </div>
 
-
 <div class="idealist">
   <ol>
     <% @ideas.each do |idea| %>
@@ -18,47 +16,4 @@
     <% end %>
   </ol>
 </div>
-
-<%
-=begin
-%>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Score</th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= Status %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @ideas.each do |idea| %>
-      <tr class="<%= render_voted_class(current_user,idea) %>">
-        <td><%= idea.upvotes.size -  idea.downvotes.size %></td>
-        <td><%= link_to idea.title, idea_path(idea.id) %></td>
-        <td><%= idea.description %></td>
-        <td><%= idea.status.name %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_idea_path(idea), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      idea_path(idea),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-		  <%- if current_user %>
-				  <%= link_to "Yes", upvote_idea_path(idea) %>
-				  <%= link_to "No", downvote_idea_path(idea) %>
-		  <% end %>
-
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%
-=end
-%>
-
 

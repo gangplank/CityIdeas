@@ -17,6 +17,13 @@ LAYOUT - http://smacss.com/book/type-layout
  This layout preference would still be declared as a Layout style and used in combination with other Layout styles."
 */
 
+#topNav {
+  .navbar-inner > .container-fluid {
+    //width:960px;
+    margin:0 auto;
+  }
+}
+
 #header {
   position:relative;
 }
@@ -24,8 +31,13 @@ LAYOUT - http://smacss.com/book/type-layout
   position:relative;
 }
 #footer {
+  &> .container-fluid {
+    //width:960px;
+    margin:0 auto;
+  }
 }
 
 #page {
   margin:0 auto;
+  //width:960px;
 }

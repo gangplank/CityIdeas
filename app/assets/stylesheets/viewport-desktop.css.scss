@@ -1,0 +1,26 @@
+
+@media (min-width: 980px) {
+  $desktopPageWidth:960px;
+  // BASE
+
+  // LAYOUT
+  #page {
+    max-width:$desktopPageWidth;
+  }
+  #footer {
+    .container {
+      .row-fluid {
+        max-width:$desktopPageWidth;
+      }
+    }
+  }
+
+  // MODULE
+
+  // STATE
+
+  // THEME
+
+  // EVENTS
+
+}
