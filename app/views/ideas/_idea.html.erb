@@ -1,13 +1,27 @@
 <li class="row-fluid">
   <div class="span9">
+    <ideascore class="<%= " inactive" if idea.upvotes.size - idea.downvotes.size == 0 %>">
+      <%- if current_user %>
+        <%= link_to upvote_idea_path(idea) do %>
+          <i class="icon-angle-up votebutton" title="Vote Up"></i><% end %>
+      <% else %>
+        <%= link_to :new_user_session do %>
+          <i class="icon-angle-up votebutton" title="Vote Up"></i><% end %>
+      <% end %>
+      <div class="votecount"><%= idea.upvotes.size -  idea.downvotes.size %></div>
+      <%- if current_user %>
+        <%= link_to downvote_idea_path(idea) do %>
+          <i class="icon-angle-down votebutton" title="Vote Down"></i><% end %>
+      <% else %>
+        <%= link_to :new_user_session do %>
+          <i class="icon-angle-down votebutton" title="Vote Down"></i><% end %>
+      <% end %>
+    </ideascore>
     <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
-    <span class="voteCount<%= " inactive" if idea.upvotes.size -  idea.downvotes.size == 0 %>">
-      <%= pluralize(idea.upvotes.size -  idea.downvotes.size, "vote") %>
-    </span>
-    <span class="commentCount<%= " inactive" if idea.comments.size %>">
-      <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea)  %>
-    </span>
     <p><%= idea.description %></p>
+    <p class="commentCount<%= " inactive" if idea.comments.size %>">
+      <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea.id) %>
+    </p>
   </div>
   <div class="span3">
 		<%- if current_user %>
@@ -19,13 +33,6 @@
 																	:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
 																	:class => 'btn btn-mini btn-danger' %>
 			<% end %>
-
-			<%= link_to upvote_idea_path(idea) do %>
-			<i class="icon-thumbs-up" title="Vote Up"></i><% end %>
-			<%= link_to downvote_idea_path(idea) do %>
-			<i class="icon-thumbs-down" title="Vote Down"></i><% end %>
-		<% else %>
-		  <%= link_to "Login to Vote", :new_user_session %>
 		<% end %>
 	</div>
 </li>

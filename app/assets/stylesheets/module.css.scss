@@ -56,20 +56,50 @@ ol, ul {
   }
 }
 
-.voteCount, .commentCount {
+.votecount, .commentcount {
   color:#222;
   &.inactive {
     color:#999
   }
 }
 
-/* COMMENTS */
+$scoreboxsize: 100px;
+.idealist {
+  font-size: 1.2em;
+  .ideatitle {
+    font-size: 1.6em;
+  }
+  .span9 {
+    ideascore {
+      .votecount {
+        font-size: .8em;
+        font-weight: bold;
+        color: #555;
+      }
+      .votebutton {
+        font-size:1.2em;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      font-size: 1.9em;
+      border-radius: 12px;
+      background-color: #F0F3F5;
+      width: $scoreboxsize;
+      height: $scoreboxsize;
+      text-align: center;
+      color: blue;
+      display: block;
+      float: left;
+      margin: 0 10px 10px 0;
+    }
+  }
+}
 
 .comment-editor {
   .avatar-column {
   }
   .comment {
-
   }
 }
 
