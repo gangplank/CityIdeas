@@ -17,15 +17,16 @@ LAYOUT - http://smacss.com/book/type-layout
  This layout preference would still be declared as a Layout style and used in combination with other Layout styles."
 */
 
-#header {
+header {
   position:relative;
 }
-#body {
+body {
   position:relative;
 }
-#footer {
+footer {
+	text-align: center;
 }
 
-#page {
+page {
   margin:0 auto;
 }
