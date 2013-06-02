@@ -63,7 +63,7 @@ ol, ul {
   }
 }
 
-$scoreboxsize: 25px;
+$scoreboxsize: 100px;
 .idealist {
   font-size: 1.2em;
   .ideatitle {
@@ -93,6 +93,8 @@ $scoreboxsize: 25px;
       float: left;
       margin: 0 10px 10px 0;
     }
+  }
+}
 
 .comment-editor {
   .avatar-column {
