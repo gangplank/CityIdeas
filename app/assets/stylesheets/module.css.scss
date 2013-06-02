@@ -13,19 +13,46 @@ MODULE - http://smacss.com/book/type-module
   font: 400 16px/24px "gentium book basic";
 }
 
-/* IDEAS */
-.idealist {
-  &> ol {
+h1, h2, h3 {
+  .heading-part {
+    color:#999;
+  }
+}
 
+/* USERS */
+.avatar {
+
+  display:inline-block;
+  padding:3px;
+  border-radius:50%;
+  border:1px solid #ccc;
+
+  img {
+    border-radius:50%;
+  }
+}
+
+ol, ul {
+  &.unindented-list {
     margin:0;
-
     &> li {
       list-style:none;
-
-      a {
-        font-weight:bold;
-      }
     }
+  }
+}
+
+/* IDEAS */
+.idealist {
+  &> ol > li {
+    a {
+      font-weight:bold;
+    }
+  }
+  .ideatitle {
+    font-size: 1.6em;
+  }
+  .span9 {
+
   }
 }
 
@@ -66,8 +93,15 @@ $scoreboxsize: 25px;
       float: left;
       margin: 0 10px 10px 0;
     }
+
+.comment-editor {
+  .avatar-column {
+  }
+  .comment {
   }
 }
+
+
 .footer {
   font-size:.85em;
 }
