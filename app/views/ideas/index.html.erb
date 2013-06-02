@@ -17,7 +17,7 @@
     <% @ideas.each do |idea| %>
       <tr class="<%= render_voted_class(current_user,idea) %>">
         <td><%= idea.upvotes.size -  idea.downvotes.size %></td>
-        <td><%= idea.title %></td>
+        <td><%= link_to idea.title, idea_path(idea.id) %></td>
         <td><%= idea.description %></td>
         <td><%= idea.status.name %></td>
         <td>
