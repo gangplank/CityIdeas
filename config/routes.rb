@@ -2,7 +2,6 @@ CityIdeas::Application.routes.draw do
 
   devise_for :users
 
-  resources :statuses
 
   resources :ideas do
     member do
@@ -13,6 +12,12 @@ CityIdeas::Application.routes.draw do
 
 
   match '/' => redirect('/ideas')
+
+  # ADMINISTRATIVE FUNCTIONS
+  match '/admin' => 'application#admin_index'
+  scope :path => 'admin' do
+    resources :statuses
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
