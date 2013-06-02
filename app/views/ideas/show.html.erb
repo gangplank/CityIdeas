@@ -14,7 +14,7 @@
   <dd><%= @idea.category.try(:name) %></dd>
 </dl>
 
-<% if current_user %>
+<% if current_user && current_user.is_admin? %>
 	<div class="form-actions">
 	  <%= link_to t('.back', :default => t("helpers.links.back")),
 	              ideas_path, :class => 'btn'  %>
@@ -27,23 +27,23 @@
 	              :class => 'btn btn-danger' %>
 	</div>
 <% end %>
-
-<%= form_for [@idea, @comment], :html => { :class => 'form-horizontal' } do |f| %>
-
-  <div class="control-group">
-    <%= f.label :comment, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :comment, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                ideas_path, :class => 'btn' %>
-  </div>
-
+<% if current_user %>
+	<%= form_for [@idea, @comment], :html => { :class => 'form-horizontal' } do |f| %>
+	  <div class="control-group">
+	    <%= f.label :comment, :class => 'control-label' %>
+	    <div class="controls">
+	      <%= f.text_area :comment, :class => 'text_area' %>
+	    </div>
+	  </div>
+	  <div class="form-actions">
+	    <%= f.submit nil, :class => 'btn btn-primary' %>
+	    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+	                ideas_path, :class => 'btn' %>
+	  </div>
+	<% end %>
+<% else %>
+	<%= link_to "Login to Comment", :new_user_session %>
 <% end %>
-
 
 <h3>Comments</h3>
 
