@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601232907) do
+ActiveRecord::Schema.define(:version => 20130602202424) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -33,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130601232907) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "status_id"
+    t.integer  "category_id"
   end
 
   create_table "statuses", :force => true do |t|
@@ -54,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20130601232907) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.boolean  "is_admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

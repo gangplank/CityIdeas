@@ -2,7 +2,7 @@
 <div class="page-header">
   <%= link_to "Ideas", :ideas %>
 
-    <% if current_user %>
+    <% if current_user and current_user.is_admin? %>
       <div class="pull-right">
         <%= link_to 'edit', edit_idea_path(@idea), :class => 'btn btn-small' %>
         <%= link_to 'delete',
@@ -13,12 +13,11 @@
       </div>
     <% end %>
   <h1>
-    <span class="heading-part">Idea:</span> <%= @idea.title %> sdim w evi miwev ljwlev imksdv owev wekvm wev
-    <%= @idea.status.name %>
+    <span class="heading-part">Idea:</span> <%= @idea.title %>
   </h1>
+  <em><%= @idea.status.name %></em>
 
 </div>
-
 <div class="row-fluid">
   <div class="span12 text">
     <%= simple_format @idea.description %>
@@ -53,30 +52,34 @@
   </ol>
 </div>
 
+<% if current_user %>
 <hr>
 
-<%= form_for [@idea, @comment], :html => { :class => 'Xform-horizontal' } do |f| %>
+  <%= form_for [@idea, @comment], :html => { :class => 'Xform-horizontal' } do |f| %>
 
-  <div class="row-fluid comment-editor">
-    <div class="span2 avatar-column">
-      <div class="avatar pull-right">
-        <img src="http://www.avatarpro.biz/avatar?s=90">
+    <div class="row-fluid comment-editor">
+      <div class="span2 avatar-column">
+        <div class="avatar pull-right">
+          <img src="http://www.avatarpro.biz/avatar?s=90">
+        </div>
+      </div>
+      <div class="span8 comment">
+
+      <div class="control-group">
+        <div class="controls">
+          <%= f.text_area :comment, :class => 'input-block-level', :rows => 5 %>
+        </div>
+      </div>
+      <div class="pull-right">
+        <%= link_to "cancel", ideas_path, :class => 'btn btn-link' %>
+        <%= f.submit 'Post', :class => 'btn btn-primary' %>
+      </div>
+
       </div>
     </div>
-    <div class="span8 comment">
 
-    <div class="control-group">
-      <div class="controls">
-        <%= f.text_area :comment, :class => 'input-block-level' %>
-      </div>
-    </div>
-    <div class="pull-right">
-      <%= link_to "cancel", ideas_path, :class => 'btn btn-link' %>
-      <%= f.submit 'Post', :class => 'btn btn-primary' %>
-    </div>
+  <% end %>
 
-    </div>
-  </div>
-
+<% else %>
+  <%= link_to "Login to Comment", :new_user_session %>
 <% end %>
-

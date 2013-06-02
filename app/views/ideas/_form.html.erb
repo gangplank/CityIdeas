@@ -1,6 +1,6 @@
 <%= form_for @idea, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
+    <%= f.label "My Idea", :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :title, :class => 'text_field' %>
     </div>
@@ -11,10 +11,18 @@
       <%= f.text_area :description, :class => 'text_area' %>
     </div>
   </div>
+	<% if current_user && current_user.is_admin? %>
+	  <div class="control-group">
+	    <%= f.label :status_id, :class => 'control-label' %>
+	    <div class="controls">
+	      <%= f.select :status_id, options_from_collection_for_select(Status.all, :id, :name), :class => 'select' %>
+	    </div>
+	  </div>
+  <% end %>
   <div class="control-group">
-    <%= f.label :status_id, :class => 'control-label' %>
+    <%= f.label "Location", :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :status_id, options_from_collection_for_select(Status.all, :id, :name), :class => 'select' %>
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), :class => 'select' %>
     </div>
   </div>
 
