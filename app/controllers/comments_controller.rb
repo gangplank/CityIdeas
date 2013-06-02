@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def create
     @idea = Idea.find(params[:idea_id])
     @comment = @idea.comments.new(params[:comment])
+    @comment.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @comment.save
