@@ -1,4 +1,7 @@
 class StatusesController < ApplicationController
+
+  layout "admin"
+
   # GET /statuses
   # GET /statuses.json
   def index

@@ -6,11 +6,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Total Votes</th>
       <th>Score</th>
-      <th>Yes</th>
-      <th>No</th>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= Status %></th>
@@ -19,12 +15,8 @@
   </thead>
   <tbody>
     <% @ideas.each do |idea| %>
-      <tr>
-        <td><%= idea.votes.size %></td>
+      <tr class="<%= render_voted_class(current_user,idea) %>">
         <td><%= idea.upvotes.size -  idea.downvotes.size %></td>
-        <td><%= idea.upvotes.size %></td>
-        <td><%= idea.downvotes.size %></td>
-        <td><%= link_to idea.id, idea_path(idea) %></td>
         <td><%= idea.title %></td>
         <td><%= idea.description %></td>
         <td><%= idea.status.name %></td>
