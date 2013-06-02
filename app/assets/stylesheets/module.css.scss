@@ -98,8 +98,8 @@ $scoreboxsize: 100px;
 }
 
 .comment-editor {
-  .avatar-column {
-  }
+  .avatar-column-before .avatar { float:right }
+  .avatar-column-after .avatar { float:left }
   .comment {
   }
 }
