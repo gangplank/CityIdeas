@@ -36,7 +36,7 @@ MODULE - http://smacss.com/book/type-module
   }
 }
 
-$scoreboxsize: 80px;
+$scoreboxsize: 25px;
 .idealist {
   font-size: 1.2em;
   .ideatitle {
@@ -46,21 +46,17 @@ $scoreboxsize: 80px;
     ideascore {
       .votecount {
         font-size: .8em;
-        line-height: 1em;
         font-weight: bold;
         color: #555;
-        line-height: .5em;
-        margin-bottom: .5em;
       }
       .votebutton {
-        font-size:0.85em;
+        font-size:1.2em;
       }
       a:hover {
         text-decoration: none;
       }
       font-size: 1.9em;
       border-radius: 12px;
-      padding: 15px;
       background-color: #F0F3F5;
       width: $scoreboxsize;
       height: $scoreboxsize;
