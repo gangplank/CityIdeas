@@ -69,6 +69,6 @@ CityIdeas::Application.configure do
   # Configuration for Devise
   config.action_mailer.default_url_options = { :host => 'YOUR-WEBSITE-HERE.NET' }
   # Devise on Heroku:
-  # config.assets.initialize_on_precompile = false
+  config.assets.initialize_on_precompile = false
 
 end
