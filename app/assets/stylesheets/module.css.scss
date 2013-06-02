@@ -29,19 +29,43 @@ MODULE - http://smacss.com/book/type-module
   }
 }
 
-.voteCount, .commentCount {
+.votecount, .commentcount {
   color:#222;
   &.inactive {
     color:#999
   }
 }
 
+$scoreboxsize: 80px;
 .idealist {
+  font-size: 1.2em;
   .ideatitle {
     font-size: 1.6em;
   }
   .span9 {
-    
+    ideascore {
+      .votecount {
+        font-size:.8em;
+        font-weight: bold;
+        color: #555;
+        line-height: .5em;
+        margin-bottom: .5em;
+      }
+      .votebutton {
+        font-size:0.85em;
+      }
+      font-size: 1.9em;
+      border-radius: 12px;
+      padding: 15px;
+      background-color: #F0F3F5;
+      width: $scoreboxsize;
+      height: $scoreboxsize;
+      text-align: center;
+      color: blue;
+      display: block;
+      float: left;
+      margin: 0 10px 10px 0;
+    }
   }
 }
 .footer {
