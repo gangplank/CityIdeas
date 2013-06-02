@@ -9,6 +9,7 @@ CityIdeas::Application.routes.draw do
       get 'upvote'
       get 'downvote'
     end
+    resources :comments
   end
 
 

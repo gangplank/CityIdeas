@@ -45,3 +45,6 @@ gem 'devise'
 
 # Voting
 gem 'acts_as_votable', '~> 0.5.0'
+
+# Comments
+gem 'acts_as_commentable', '3.0.1'
