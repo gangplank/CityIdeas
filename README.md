@@ -3,11 +3,11 @@ CityIdeas
 
 Submit ideas to make your place better, and vote for them.
 
-** How to Contribute **
+## How to Contribute ##
 
 If you would like to contribute to this repository, first fork the project on GitHub (https://github.com/gangplank/CityIdeas).
 
-*** Development Environment ***
+### Development Environment ###
 
 This project was developed using Rails 3.2.13 and Ruby 1.9.3.
 
