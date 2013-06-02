@@ -36,7 +36,7 @@
       <li class="row-fluid">
         <div class="span2 avatar-column">
           <div class="avatar pull-right">
-            <img src="http://www.avatarpro.biz/avatar?s=90">
+            <img src="http://www.avatarpro.biz/avatar/<%= comment.user.md5 %>?s=90">
           </div>
         </div>
         <div class="span8">
@@ -60,7 +60,7 @@
     <div class="row-fluid comment-editor">
       <div class="span2 avatar-column">
         <div class="avatar pull-right">
-          <img src="http://www.avatarpro.biz/avatar?s=90">
+          <img src="http://www.avatarpro.biz/avatar/<%= current_user.md5 %>?s=90">
         </div>
       </div>
       <div class="span8 comment">
