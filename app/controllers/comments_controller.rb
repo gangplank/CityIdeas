@@ -13,5 +13,16 @@ class CommentsController < ApplicationController
       end
     end
   end
+  
+  def destroy
+    @idea = Idea.find(params[:idea_id])
+    @idea.comments.find(params[:id]).destroy
+
+    respond_to do |format|
+      format.html { redirect_to @idea }
+      format.json { head :no_content }
+    end
+  end
+  
 
 end
