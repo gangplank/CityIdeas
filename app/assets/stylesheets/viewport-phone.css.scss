@@ -8,6 +8,16 @@
     margin:10px;
   }
   // MODULE
+  .comment-editor {
+    .avatar-column-before { display:none }
+    .avatar-column-after {
+      display:inline-block
+
+    }
+    .avatar {
+      width:50px;
+    }
+  }
 
   // STATE
 

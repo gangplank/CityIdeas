@@ -58,8 +58,8 @@
   <%= form_for [@idea, @comment], :html => { :class => 'Xform-horizontal' } do |f| %>
 
     <div class="row-fluid comment-editor">
-      <div class="span2 avatar-column">
-        <div class="avatar pull-right">
+      <div class="span2 avatar-column avatar-column-before">
+        <div class="avatar">
           <img src="http://www.avatarpro.biz/avatar/<%= current_user.md5 %>?s=90">
         </div>
       </div>
@@ -68,6 +68,11 @@
       <div class="control-group">
         <div class="controls">
           <%= f.text_area :comment, :class => 'input-block-level', :rows => 5 %>
+        </div>
+      </div>
+      <div class="avatar-column avatar-column-after">
+        <div class="avatar">
+          <img src="http://www.avatarpro.biz/avatar/<%= current_user.md5 %>?s=90">
         </div>
       </div>
       <div class="pull-right">

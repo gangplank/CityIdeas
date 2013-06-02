@@ -4,6 +4,12 @@
   // LAYOUT
 
   // MODULE
+  .comment-editor {
+    .avatar-column-before { display:inline-block }
+    .avatar-column-after {
+      display:none;
+    }
+  }
 
   // STATE
 
