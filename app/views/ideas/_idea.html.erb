@@ -1,6 +1,6 @@
 <li class="row-fluid">
   <div class="span9">
-    <%= link_to idea.title, idea_path(idea.id) %>
+    <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
     <span class="voteCount<%= " inactive" if idea.upvotes.size -  idea.downvotes.size == 0 %>">
       <%= pluralize(idea.upvotes.size -  idea.downvotes.size, "vote") %>
     </span>
