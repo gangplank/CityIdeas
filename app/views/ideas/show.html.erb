@@ -9,7 +9,9 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @idea.description %></dd>
   <dt><strong>Status:</strong></dt>
-  <dd><%= @idea.status.name %></dd>
+  <dd><%= @idea.status.try(:name) %></dd>
+  <dt><strong>Neighborhood:</strong></dt>
+  <dd><%= @idea.category.try(:name) %></dd>
 </dl>
 
 <% if current_user %>
@@ -27,13 +29,6 @@
 <% end %>
 
 <%= form_for [@idea, @comment], :html => { :class => 'form-horizontal' } do |f| %>
-
-	<div class="control-group">
-	  <%= f.label :title, :class => 'control-label' %>
-	  <div class="controls">
-	    <%= f.text_field :title, :class => 'text_field' %>
-	  </div>
-	</div>
 
   <div class="control-group">
     <%= f.label :comment, :class => 'control-label' %>
@@ -54,7 +49,6 @@
 
 
 <% @idea.comments.recent.all.each do |comment| %>
-	<h4><%= comment.title %></h4>
 	<p>
 		<%= comment.comment %></br>
 		Posted By: <%= comment.user ? comment.user.try(:email) : "Anonymous" %> 
