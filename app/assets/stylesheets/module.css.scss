@@ -45,7 +45,8 @@ $scoreboxsize: 80px;
   .span9 {
     ideascore {
       .votecount {
-        font-size:.8em;
+        font-size: .8em;
+        line-height: 1em;
         font-weight: bold;
         color: #555;
         line-height: .5em;
@@ -53,6 +54,9 @@ $scoreboxsize: 80px;
       }
       .votebutton {
         font-size:0.85em;
+      }
+      a:hover {
+        text-decoration: none;
       }
       font-size: 1.9em;
       border-radius: 12px;

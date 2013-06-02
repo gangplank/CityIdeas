@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!({:email => "admin@cityideas.com", :password => "password", :password_confirmation => "password" })
-
+User.create!({:email => "user@cityideas.com", :is_admin => false, :password => "password", :password_confirmation => "password" })
+User.create!({:email => "admin@cityideas.com", :is_admin => true, :password => "password", :password_confirmation => "password" })
 
 categories = Category.create([{ name: 'City Wide' }, 
                               { name: '85224 - North Central Chandler' }, 
