@@ -73,16 +73,16 @@ ol, ul {
   .votebutton a:hover {
     text-decoration: none !important;
   }
-  .idea-status {
-    border-radius:3px;
-    display:inline-block;
-    padding:.1em .5em;
-    font-size:.85em;
-    background-color:#eee;
-  }
 
 }
 
+.idea-status {
+  border-radius:3px;
+  display:inline-block;
+  padding:.1em .5em;
+  font-size:.85em;
+  background-color:#eee;
+}
 
 .votecount, .commentcount {
   color:#222;
