@@ -9,6 +9,9 @@ MODULE - http://smacss.com/book/type-module
 "Avoid element selectors."
 */
 
+$scoreboxsize: 100px;
+
+
 .text p {
   font: 400 16px/24px "gentium book basic";
 }
@@ -49,7 +52,7 @@ ol, ul {
       font-weight:bold;
     }
   }
-  .ideatitle {
+  .ideaTitle {
     font-size: 1.6em;
   }
   .idea-status {
@@ -57,13 +60,27 @@ ol, ul {
     vertical-align: bottom;
     margin-left:1em;
   }
-}
-.idea-status {
-  border-radius:3px;
-  display:inline-block;
-  padding:.1em .5em;
-  font-size:.85em;
-  background-color:#eee;
+  .userupvoted .votebutton.voteup,
+  .userdownvoted .votebutton.votedown,
+  .userupvoted .votecount,
+  .userdownvoted .votecount {
+    color: orange;
+  }
+  .votebutton {
+    font-size: 1.2em;
+  }
+  .votebutton a,
+  .votebutton a:hover {
+    text-decoration: none !important;
+  }
+  .idea-status {
+    border-radius:3px;
+    display:inline-block;
+    padding:.1em .5em;
+    font-size:.85em;
+    background-color:#eee;
+  }
+
 }
 
 
@@ -74,7 +91,6 @@ ol, ul {
   }
 }
 
-$scoreboxsize: 100px;
 
 .idealist {
   font-size: 1.2em;
@@ -102,7 +118,7 @@ $scoreboxsize: 100px;
         font-size:1.2em;
       }
       a:hover {
-        text-decoration: none;
+        text-decoration: none !important;
       }
     }
   }

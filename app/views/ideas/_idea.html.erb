@@ -1,20 +1,20 @@
-<li class="row-fluid">
+<li class="row-fluid <%= render_voted_class(current_user, idea) %>">
   <div class="span12">
     <div class="votebox<%= " inactive" if idea.upvotes.size - idea.downvotes.size == 0 %>">
       <%- if current_user %>
         <%= link_to upvote_idea_path(idea) do %>
-          <i class="icon-caret-up votebutton" title="Vote Up"></i><% end %>
+          <i class="icon-caret-up votebutton voteup" title="Vote Up"></i><% end %>
       <% else %>
         <%= link_to :new_user_session do %>
-          <i class="icon-caret-up votebutton" title="Vote Up"></i><% end %>
+          <i class="icon-caret-up votebutton voteup" title="Vote Up"></i><% end %>
       <% end %>
       <div class="votecount"><%= idea.vote_score %></div>
       <%- if current_user %>
         <%= link_to downvote_idea_path(idea) do %>
-          <i class="icon-caret-down votebutton" title="Vote Down"></i><% end %>
+          <i class="icon-caret-down votebutton votedown" title="Vote Down"></i><% end %>
       <% else %>
         <%= link_to :new_user_session do %>
-          <i class="icon-caret-down votebutton" title="Vote Down"></i><% end %>
+          <i class="icon-caret-down votebutton votedown" title="Vote Down"></i><% end %>
       <% end %>
     </div>
     <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
