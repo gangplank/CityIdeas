@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130602233134) do
     t.datetime "updated_at",  :null => false
     t.integer  "status_id"
     t.integer  "category_id"
+    t.integer  "vote_score"
   end
 
   create_table "statuses", :force => true do |t|

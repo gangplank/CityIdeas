@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @ideas = Idea.order("vote_score DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -88,6 +88,7 @@ class IdeasController < ApplicationController
   def upvote
     @idea = Idea.find(params[:id])
     @idea.liked_by current_user
+    @idea.update_vote_score
 
     respond_to do |format|
       format.html { redirect_to ideas_url }
@@ -98,6 +99,7 @@ class IdeasController < ApplicationController
   def downvote
     @idea = Idea.find(params[:id])
     @idea.downvote_from current_user
+    @idea.update_vote_score
 
     respond_to do |format|
       format.html { redirect_to ideas_url }
