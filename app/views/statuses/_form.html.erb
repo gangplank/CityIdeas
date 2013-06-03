@@ -6,6 +6,26 @@
     </div>
   </div>
 
+  <div class="control-group">
+    <%= f.label :color, :class => 'control-label'%>
+    <div class="controls">
+      <%= f.text_field :color, :class => 'span2' %>
+    <span class="help-block"><small>Enter a hex representation of a color (e.g. #fff or #2266CC) or a color name (e.g. blue)</small></span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :icon, :class => 'control-label'%>
+    <div class="controls">
+      <div class="input-prepend">
+        <span class="add-on">icon-</span>
+        <%= f.text_field :icon %>
+      </div>
+      <span class="help-block"><small>List of available icons can be found on <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">font-awesome</a>.</small></span>
+    </div>
+
+  </div>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
