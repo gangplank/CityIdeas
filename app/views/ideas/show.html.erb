@@ -36,7 +36,7 @@
       <li class="row-fluid">
         <div class="span2 avatar-column">
           <div class="avatar pull-right">
-            <img src="http://www.avatarpro.biz/avatar/<%= comment.user.md5 %>?s=90">
+						<%= gravatar_image_tag(comment.try(:user).try(:email), :alt => comment.try(:user).try(:email), :gravatar => { :size => 90 }) %>
           </div>
         </div>
         <div class="span8">
@@ -70,7 +70,7 @@
     <div class="row-fluid comment-editor">
       <div class="span2 avatar-column avatar-column-before">
         <div class="avatar">
-          <img src="http://www.avatarpro.biz/avatar/<%= current_user.md5 %>?s=90">
+					<%= gravatar_image_tag(current_user.try(:email), :alt => current_user.try(:email), :gravatar => { :size => 90 }) %>
         </div>
       </div>
       <div class="span8 comment">
@@ -82,7 +82,7 @@
       </div>
       <div class="avatar-column avatar-column-after">
         <div class="avatar">
-          <img src="http://www.avatarpro.biz/avatar/<%= current_user.md5 %>?s=90">
+					<%= gravatar_image_tag(current_user.try(:email), :alt => current_user.try(:email), :gravatar => { :size => 90 }) %>
         </div>
       </div>
       <div class="pull-right">
