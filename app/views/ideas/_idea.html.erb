@@ -18,6 +18,12 @@
       <% end %>
     </div>
     <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
+
+    <div class="idea-status" style="<%= "background-color:#{idea.status.color}" unless idea.status.color.nil? %>">
+      <% unless idea.status.icon.nil? %><i class="icon-<%=idea.status.icon%>"></i><% end %>
+      <%= idea.status.name %>
+    </div>
+
 		<%- if current_user %>
 			<% if current_user.is_admin? %>
 				<%= link_to t('.edit', :default => t("helpers.links.edit")), edit_idea_path(idea), :class => 'btn btn-mini' %>
@@ -28,7 +34,7 @@
 																	:class => 'btn btn-mini btn-danger' %>
 			<% end %>
 		<% end %>
-    <p><%= idea.description %></p>
+    <p><%= simple_format idea.description %></p>
     <p class="commentCount<%= " inactive" if idea.comments.size %>">
       <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea.id) %>
     </p>
