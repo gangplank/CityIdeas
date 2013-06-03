@@ -15,7 +15,10 @@
   <h1>
     <span class="heading-part">Idea:</span> <%= @idea.title %>
   </h1>
-  <em><%= @idea.status.name %></em>
+  <div class="idea-status" style="<%= "background-color:#{@idea.status.color}" unless @idea.status.color.nil? %>">
+    <% unless @idea.status.icon.nil? %><i class="icon-<%=@idea.status.icon%>"></i><% end %>
+    <%= @idea.status.name %>
+  </div>
 
 </div>
 <div class="row-fluid">

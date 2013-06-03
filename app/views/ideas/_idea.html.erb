@@ -1,29 +1,23 @@
 <li class="row-fluid">
-  <div class="span9">
-    <ideascore class="<%= " inactive" if idea.upvotes.size - idea.downvotes.size == 0 %>">
+  <div class="span12">
+    <div class="votebox<%= " inactive" if idea.upvotes.size - idea.downvotes.size == 0 %>">
       <%- if current_user %>
         <%= link_to upvote_idea_path(idea) do %>
-          <i class="icon-angle-up votebutton" title="Vote Up"></i><% end %>
+          <i class="icon-caret-up votebutton" title="Vote Up"></i><% end %>
       <% else %>
         <%= link_to :new_user_session do %>
-          <i class="icon-angle-up votebutton" title="Vote Up"></i><% end %>
+          <i class="icon-caret-up votebutton" title="Vote Up"></i><% end %>
       <% end %>
       <div class="votecount"><%= idea.vote_score %></div>
       <%- if current_user %>
         <%= link_to downvote_idea_path(idea) do %>
-          <i class="icon-angle-down votebutton" title="Vote Down"></i><% end %>
+          <i class="icon-caret-down votebutton" title="Vote Down"></i><% end %>
       <% else %>
         <%= link_to :new_user_session do %>
-          <i class="icon-angle-down votebutton" title="Vote Down"></i><% end %>
+          <i class="icon-caret-down votebutton" title="Vote Down"></i><% end %>
       <% end %>
-    </ideascore>
+    </div>
     <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
-    <p><%= idea.description %></p>
-    <p class="commentCount<%= " inactive" if idea.comments.size %>">
-      <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea.id) %>
-    </p>
-  </div>
-  <div class="span3">
 		<%- if current_user %>
 			<% if current_user.is_admin? %>
 				<%= link_to t('.edit', :default => t("helpers.links.edit")), edit_idea_path(idea), :class => 'btn btn-mini' %>
@@ -34,5 +28,9 @@
 																	:class => 'btn btn-mini btn-danger' %>
 			<% end %>
 		<% end %>
-	</div>
+    <p><%= idea.description %></p>
+    <p class="commentCount<%= " inactive" if idea.comments.size %>">
+      <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea.id) %>
+    </p>
+  </div>
 </li>
