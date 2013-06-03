@@ -18,7 +18,14 @@
       <% end %>
     </ideascore>
     <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
-    <p><%= idea.description %></p>
+
+
+    <div class="idea-status" style="<%= "background-color:#{idea.status.color}" unless idea.status.color.nil? %>">
+      <% unless idea.status.icon.nil? %><i class="icon-<%=idea.status.icon%>"></i><% end %>
+      <%= idea.status.name %>
+    </div>
+
+    <%= simple_format idea.description %>
     <p class="commentCount<%= " inactive" if idea.comments.size %>">
       <%= link_to pluralize( idea.comments.size, "comment" ), idea_path(idea.id) %>
     </p>
