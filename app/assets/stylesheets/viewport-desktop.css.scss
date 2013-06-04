@@ -4,6 +4,11 @@
   // BASE
 
   // LAYOUT
+  #topNav {
+    .navbar-inner > .container-fluid {
+      max-width:$desktopPageWidth;
+    }
+  }
   #page {
     max-width:$desktopPageWidth;
   }

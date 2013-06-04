@@ -22,6 +22,32 @@ h1, h2, h3 {
   }
 }
 
+/* TOP NAVIGATION */
+.navbar {
+
+  .brand-container {
+    position:relative;
+    width:125px;
+    padding-bottom:1em;
+    float:left;
+  }
+  .brand {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+    width:125px;
+    height:60px;
+    background:transparent url(top-nav.logo.png) no-repeat scroll top left;
+    text-indent: -9999em;
+    float:none;
+  }
+  .nav-collapse {
+    margin-left:125px;
+  }
+}
+
 /* USERS */
 .avatar {
 
