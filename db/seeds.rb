@@ -20,11 +20,11 @@ categories = Category.create([{ name: 'City Wide' },
                               { name: '85286 - Central Chandler' }])
 
 
-statuses = Status.create([{ name: 'under review' }, 
-                        { name: 'planned' }, 
-                        { name: 'started' }, 
-                        { name: 'completed' }, 
-                        { name: 'declined' }])
+statuses = Status.create([{ name: 'under review', color: '2', icon: 'exclamation-sign'  },
+                        { name: 'planned', color: '7', icon: 'edit' },
+                        { name: 'started', color: '23', icon: 'road' },
+                        { name: 'completed', color: '24', icon: 'ok-sign' },
+                        { name: 'declined', color: '12', icon: 'remove-sign' }])
                         
 Idea.create(title: 'My New Idea',
             description: 'This idea just came to me.  Like it?',

@@ -19,8 +19,8 @@
     </div>
     <%= link_to idea.title, idea_path(idea.id), :class => 'ideatitle' %>
 
-    <div class="idea-status" style="<%= "background-color:#{idea.status.color}" unless idea.status.color.nil? %>">
-      <% unless idea.status.icon.nil? %><i class="icon-<%=idea.status.icon%>"></i><% end %>
+    <div class="idea-status statusColor<%= idea.status.color unless idea.status.color.nil? %>">
+      <% unless idea.status.icon.empty? %><i class="icon-<%=idea.status.icon%>"></i><% end %>
       <%= idea.status.name %>
     </div>
 

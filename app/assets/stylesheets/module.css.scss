@@ -174,7 +174,7 @@ ol, ul {
       border-color:#000;
     }
 
-    &:hover {
+    &:hover, &:focus {
       text-decoration: none;
       border-color:gray;
     }
