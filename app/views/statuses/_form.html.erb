@@ -1,16 +1,34 @@
+<script type="text/javascript">
+  console.log(jQuery);
+  console.log($.jquery);
+$(document).ready(function () {
+  $('.status-pills-container').find('a.status-pill').bind('click', function () {
+    var $this = $(this);
+    $('#status_color').val( $this.text() );
+    $this.addClass('selected')
+        .siblings().removeClass('selected');
+  });
+});
+</script>
+
 <%= form_for @status, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :name, :class => 'text_field' %>
+      [<%= @status.color %>]
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :color, :class => 'control-label'%>
     <div class="controls">
-      <%= f.text_field :color, :class => 'span2' %>
-    <span class="help-block"><small>Enter a hex representation of a color (e.g. #fff or #2266CC) or a color name (e.g. blue)</small></span>
+      <%= f.hidden_field :color %>
+      <div class="status-pills-container">
+        <% for i in 0..23 %>
+          <a class="status-pill statusColor<%=i%><%= @status.color == i.to_s ? ' selected' : '' %>" href="javascript://"><%= i %></a>
+        <% end %>
+      </div>
     </div>
   </div>
 
